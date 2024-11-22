@@ -1,0 +1,91 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CalculadoraPesoCorporal.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Label HorizontalOptions="Center"
+                Text="Calcular el Índice de Masa Corporal"
+                />
+
+           
+            <HorizontalStackLayout Spacing="15">
+               
+                
+
+                
+                <VerticalStackLayout Spacing="10" VerticalOptions="Center">
+                    <HorizontalStackLayout HorizontalOptions="Start">
+                        <Label Text="Unidad de Medida:" VerticalOptions="Center" />
+                        <Picker x:Name="pickerAltura"
+                              Title="Selecciona una Opcion"
+                              >
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Centímetros</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout HorizontalOptions="Start">
+                        <Label Text="Altura:" VerticalOptions="Center" />
+                        <Entry x:Name="txtAltura"
+                               Placeholder="Escribe su altura en centímetros..."
+                               WidthRequest="200" 
+                              />
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout HorizontalOptions="Start">
+                        <Label Text="Unidad de Medida:" VerticalOptions="Center" />
+                        <Picker x:Name="pickerPeso"
+                            Title="Selecciona una Opcion"
+                            >
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Kilos</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout HorizontalOptions="Start">
+                        <Label Text="Peso(Kg):" VerticalOptions="Center" />
+                        <Entry x:Name="txtPeso"
+                               Placeholder="Escribe su peso en KG..."
+                               WidthRequest="200" 
+                               TextChanged="OnPesoChanged"
+                               />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+
+                <Image Source="https://image.tuasaude.com/media/article/me/dr/imc_15748_l.jpg"
+                   WidthRequest="300"
+                   HeightRequest="300"
+                   VerticalOptions="Center"
+                   />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Start">
+                <Button
+                     x:Name="btnCalcular"
+                     Text="Calcular" 
+                     Clicked="OnCalcularClicked"
+                     HorizontalOptions="Fill" />
+                <Button
+                     x:Name="btnLimpiar"
+                     Text="Limpiar" 
+                     Clicked="OnLimpiarClicked"
+                     HorizontalOptions="Fill" />
+                <Button
+                     x:Name="btnSalir"
+                     Text="Salir" 
+                     Clicked="OnSalirClicked"
+                     HorizontalOptions="Fill" />
+
+            </HorizontalStackLayout>
+           
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
